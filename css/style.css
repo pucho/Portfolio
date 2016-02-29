@@ -1,0 +1,48 @@
+/** {
+  border: 1px solid red !important;
+}*/
+
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #46494C;
+  color: #DCDCDD;
+  text-shadow: 1px 1px 2px #000000;
+
+}
+
+hr {
+    border: none;
+    height: 2px;
+    /* Set the hr color */
+    background-color: #4C5C68;
+}
+
+.titleLogo {
+  padding-top: 20px;
+  padding-left: 20px;
+
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .col-md-4 {
+    width: 33.3333333%;
+  }
+}
+
+.img-responsive {
+    margin: 0 auto;
+}
