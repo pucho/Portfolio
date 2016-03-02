@@ -16,7 +16,7 @@ body {
   background: -moz-linear-gradient(#46494C, #464940); /* For Firefox 3.6 to 15 */
   background: linear-gradient(#46494C, #464940); /* Standard syntax */
   color: #DCDCDD;
-  text-shadow: 1px 1px 2px #000000;
+  text-shadow: 1px 1px 5px #000000;
   font-family: 'Lato', sans-serif;
 }
 
@@ -25,11 +25,33 @@ hr {
     height: 2px;
     /* Set the hr color */
     background-color: #4C5C68;
+
+}
+
+h2 {
+  margin-top: 0px;
 }
 
 .title-img {
   border-radius: 5px;
   margin: 20px;
+  width: 100px;
+  height: 100px;
+  box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.img-responsive {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.personal-links-tab {
+  display: inline-block;
+  text-align: center;
+  padding:25px;
+}
+
+.personal-link {
+  padding-right: 20px;
 }
 
 @media screen and (max-width: 768px) {
@@ -39,6 +61,7 @@ hr {
   }
   .page-title {
     text-align: center;
+    margin-top: 5px;
   }
   .project-thumbnail {
     padding-bottom: 10px;
