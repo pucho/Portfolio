@@ -1,7 +1,3 @@
-/** {
-  border: 1px solid red !important;
-}*/
-
 *{
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -10,11 +6,7 @@
 }
 
 body {
-  background: #46494C; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#46494C, #464940); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#46494C, #46494C); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#46494C, #464940); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#46494C, #464940); /* Standard syntax */
+  background: #46494C;
   color: #DCDCDD;
   text-shadow: 1px 1px 5px #000000;
   font-family: 'Lato', sans-serif;
@@ -25,7 +17,6 @@ hr {
     height: 2px;
     /* Set the hr color */
     background-color: #4C5C68;
-
 }
 
 h2 {
@@ -54,6 +45,12 @@ h2 {
   padding-right: 20px;
 }
 
+.about-me {
+  text-align: center;
+}
+
+/*All media queries here*/
+
 @media screen and (max-width: 768px) {
   .title-logo {
     display: table;
@@ -66,12 +63,6 @@ h2 {
   .project-thumbnail {
     padding-bottom: 10px;
   }
-  /*.main-project-img {
-    padding-top: 10px;
-  }
-  .main-project-img:first-of-type {
-    padding-top: 0px;
-  }*/
 }
 
 @media screen and (min-width: 900px) {
