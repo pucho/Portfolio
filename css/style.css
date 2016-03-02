@@ -10,7 +10,11 @@
 }
 
 body {
-  background-color: #46494C;
+  background: #46494C; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#46494C, #464940); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#46494C, #46494C); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#46494C, #464940); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#46494C, #464940); /* Standard syntax */
   color: #DCDCDD;
   text-shadow: 1px 1px 2px #000000;
   font-family: 'Lato', sans-serif;
