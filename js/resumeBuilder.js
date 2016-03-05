@@ -7,6 +7,10 @@ $( document ).ready(function() {
 		$("._main").on("click", "#resume", function(){
 			$("._main").load("https://raw.githubusercontent.com/pucho/pucho.github.io/master/partials/_resume.html");
 		});
+		//Load main on click
+		$("._main").on("click", "#back", function(){
+			$("._main").load("https://raw.githubusercontent.com/pucho/pucho.github.io/master/partials/_main.html");
+		});
 		//Change cursor
 		$("._main").on("mouseover", "#resume", function(){
 			console.log("mouseover");
