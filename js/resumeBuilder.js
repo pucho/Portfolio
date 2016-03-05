@@ -7,6 +7,10 @@ $( document ).ready(function() {
 		}
 });
 
+$("#resume").click( function {
+		$("._main").load("https://raw.githubusercontent.com/pucho/pucho.github.io/master/partials/_resume.html");
+});
+
 
 var work = {
 	"jobs": [{
