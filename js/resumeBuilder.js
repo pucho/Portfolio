@@ -3,7 +3,7 @@ $( document ).ready(function() {
 		console.log("afuera")
     if ($("._main").length.text == undefined){
 			console.log("atroden")
-			$("._main").load("partials/_main.html");
+			$("._main").load("https://raw.githubusercontent.com/pucho/pucho.github.io/master/partials/_main.html");
 		}
 });
 
