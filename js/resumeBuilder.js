@@ -1,16 +1,18 @@
 $( document ).ready(function() {
-		console.log($("._main").length.text)
-		console.log("afuera")
-    if ($("._main").length.text == undefined){
-			console.log("atroden")
+		if ($("._main").length.text == undefined){
 			$("._main").load("https://raw.githubusercontent.com/pucho/pucho.github.io/master/partials/_main.html");
 		}
-});
 
-$("#resume").click( function() {
-		$("._main").load("https://raw.githubusercontent.com/pucho/pucho.github.io/master/partials/_resume.html");
+		// Load resume on resume click
+		$("._main").on("click", "#resume", function(){
+			$("._main").load("https://raw.githubusercontent.com/pucho/pucho.github.io/master/partials/_resume.html");
+		});
+		//Change cursor
+		$("._main").on("mouseover", "#resume", function(){
+			console.log("mouseover");
+			$('#resume').css('cursor', 'pointer');
+		});
 });
-
 
 var work = {
 	"jobs": [{
