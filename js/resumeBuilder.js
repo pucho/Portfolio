@@ -17,32 +17,25 @@ var work = {
 		"location": "Buenos Aires",
 		"dates": 2013,
 		"description": "3D Designer and Animator"
-  }]
-}
-
-var displayWork = function() {
-	for (job in work.jobs){
-		var jobDataTemplate = `<h2>${work.jobs[job].title} at ${work.jobs[job].employer} in ${work.jobs[job].location} (${work.jobs[job].dates})</h2>`
-		$("#work").append(jobDataTemplate)
-	}
+  }],
 }
 
 var projects = {
 	"projects": [{
 		"title": "Redux",
-		"dates": 2015,
+		"dates": "2015",
 		"description": "Redux forms",
-		"images": ["www.placehold.it/100x100.jpg", "www.placehold.it/100x100.jpg"]
+		"images": ["http://www.placehold.it/100x100.jpg", "http://www.placehold.it/100x100.jpg"]
 	}, {
 		"title": "Ruby",
-		"dates": 2015,
+		"dates": "2015",
 		"description": "Ruby forms",
-		"images": ["www.placehold.it/100x100.jpg", "www.placehold.it/100x100.jpg"]
+		"images": ["http://www.placehold.it/100x100.jpg", "http://www.placehold.it/100x100.jpg"]
 	}, {
 		"title": "VMWare Migration",
-		"dates": 2014,
+		"dates": "2014",
 		"description": "VM migration to new version of VMWare",
-		"images": ["www.placehold.it/100x100.jpg", "www.placehold.it/100x100.jpg"]
+		"images": ["http://www.placehold.it/100x100.jpg", "http://www.placehold.it/100x100.jpg"]
 	}]
 }
 
@@ -70,52 +63,86 @@ var education = {
 		"location": "Montevideo",
 		"degree": "HSA",
 		"majors": "Math",
-		"dates": 2009,
-		"url": "www.maturana.com.uy"
+		"dates": "2009-2011",
+		"url": "http://www.maturana.com.uy"
 	}, {
 		"name": "Juan 23",
 		"location": "Montevideo",
 		"degree": "BA",
 		"majors": "Engineering",
-		"dates": 2014,
-		"url": "www.juan23.com.uy"
+		"dates": "2012-2013",
+		"url": "http://www.juan23.com.uy"
 	}],
-	"onlineCourses": [
-    {
-		  "title": "Front End Developer",
-		  "school": "Udacity",
-		  "dates": 2016,
-		  "url": "www.udacity.com"
-	  },
-    {
-      "title": "React and Redux",
-  		"school": "Udemy",
-  		"dates": 2015,
-  		"url": "www.udemy.com"
-    }
-  ]
+	"onlineCourses": [{
+		"title": "Front End Developer",
+		"school": "Udacity",
+		"dates": 2016,
+		"url": "http://www.udacity.com"
+	}, {
+    "title": "React and Redux",
+  	"school": "Udemy",
+  	"dates": 2015,
+  	"url": "http://www.udemy.com"
+  }]
 }
 
+bio.display = function() {
+	$("#bio").append("<h2>Contact</h2>")
+	for (index in bio.contacts){
+		var bioDataTemplate = `<div class="col-md-${12 / Object.keys(bio.contacts).length}">
+			<h3>${index}</h3><h5>${bio.contacts[index]}</h5>`
+		$("#bio").append(bioDataTemplate)
+	}
+	$("#bio").append("<h2>Skills</h2>")
+	for(index in bio.skills){
+		var skillsTemplate = `<div class="col-md-${12 / Object.keys(bio.skills).length}">
+			<h5>${bio.skills[index]}</h5>`
+		$("#bio").append(skillsTemplate)
+	}
+	$("#bio").append("</div")
+}
 
+work.display = function() {
+	$("#work").append("<hr><h2>Work Experience</h2><hr>")
+	for (job in work.jobs){
+		var jobDataTemplate = `<h3>${work.jobs[job].title} at ${work.jobs[job].employer} in ${work.jobs[job].location} (${work.jobs[job].dates})</h3>
+													 <h4>${work.jobs[job].description}</h4>`
+		$("#work").append(jobDataTemplate)
+	}
+}
 
+projects.display = function() {
+	$("#projects").append("<hr><h2>Projects</h2><hr>")
+	for (index in projects.projects){
+		var images = ""
+		for (image in projects.projects[index].images) {
+			images += `<img class'img-responsive' src='${projects.projects[index].images[image]}'>`
+		}
+		console.log(images)
+		var projectTemplate = `<h3>${projects.projects[index].title} in ${projects.projects[index].dates}</h3>
+													 <h4>${projects.projects[index].description}</h4>
+													 ${images}
+													 `
+		console.log(projectTemplate)
+		$("#projects").append(projectTemplate)
+	}
+}
 
-
-
-
-
-// if (bio.skills.length > 0) {
-//   $("#header").append(HTMLskillsStart)
-//
-//   var formattedSkill = HTMLskills.replace("%data%", bio.skills[0])
-//   $("#skills").append(formattedSkill);
-// }
-//
-// for (job in work.jobs) {
-//   $("#workExperience").append(HTMLworkStart)
-//
-//   var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer)
-//   var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title)
-//   var formattedEmployerTitle = formattedEmployer + formattedTitle
-//
-//   $(".work-entry:last").append(formattedEmployerTitle)
-// }
+education.display = function () {
+	$("#education").prepend("<hr><h2>Formal education</h2><hr>")
+	for (index in education.schools){
+		var school = education.schools[index]
+		var educationTemplate = `<h3><a href="${school.url}"></a>${school.name} located in ${school.location}</h3>
+														 <h4>Graduated in ${school.dates} with a degree of ${school.degree} majoring in ${school.majors}</h4>
+														 `
+	 $("#education").append(educationTemplate)
+	}
+	$("#education").append("<hr><h2>Online education</h2><hr>")
+	for (index in education.onlineCourses){
+		var school = education.onlineCourses[index]
+		var educationTemplate = `<h3><a href="${school.url}"></a>${school.school}</h3>
+														 <h4>Graduated in ${school.dates} with a title of ${school.title}</h4>
+														 `
+	 $("#education").append(educationTemplate)
+	}
+}
