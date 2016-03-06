@@ -86,8 +86,7 @@ var education = {
   }]
 }
 
-bio.display = $( document ).ready(
-	function() {
+bio.display = function() {
 		$("#bio").append("<h2>Contact</h2>")
 		for (index in bio.contacts){
 			var bioDataTemplate = `<div class="col-md-${12 / Object.keys(bio.contacts).length}">
@@ -102,10 +101,9 @@ bio.display = $( document ).ready(
 		}
 		$("#bio").append("</div")
 	}
-)
 
-work.display = $( document ).ready(
-	function() {
+
+work.display = function() {
 		$("#work").append("<hr><h2>Work Experience</h2><hr>")
 		for (job in work.jobs){
 			var jobDataTemplate = `<h3>${work.jobs[job].title} at ${work.jobs[job].employer} in ${work.jobs[job].location} (${work.jobs[job].dates})</h3>
@@ -113,10 +111,8 @@ work.display = $( document ).ready(
 			$("#work").append(jobDataTemplate)
 		}
 	}
-)
 
-projects.display = $( document ).ready(
-	function() {
+projects.display = function() {
 		$("#projects").append("<hr><h2>Projects</h2><hr>")
 		for (index in projects.projects){
 			var images = ""
@@ -130,10 +126,8 @@ projects.display = $( document ).ready(
 			$("#projects").append(projectTemplate)
 		}
 	}
-)
 
-education.display = $( document ).ready(
-	function () {
+education.display = function () {
 		$("#education").prepend("<hr><h2>Formal education</h2><hr>")
 		for (index in education.schools){
 			var school = education.schools[index]
@@ -151,4 +145,3 @@ education.display = $( document ).ready(
 		 $("#education").append(educationTemplate)
 		}
 	}
-)
