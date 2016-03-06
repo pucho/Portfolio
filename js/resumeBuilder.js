@@ -1,23 +1,3 @@
-$( document ).ready(function() {
-		if ($("._main").length.text == undefined){
-			$("._main").load("https://raw.githubusercontent.com/pucho/pucho.github.io/master/partials/_main.html");
-		}
-
-		// Load resume on resume click
-		$("._main").on("click", "#resume", function(){
-			$("._main").load("https://raw.githubusercontent.com/pucho/pucho.github.io/master/partials/_resume.html");
-		});
-		//Load main on click
-		$("._main").on("click", "#back", function(){
-			$("._main").load("https://raw.githubusercontent.com/pucho/pucho.github.io/master/partials/_main.html");
-		});
-		//Change cursor
-		$("._main").on("mouseover", "#resume", function(){
-			console.log("mouseover");
-			$('#resume').css('cursor', 'pointer');
-		});
-});
-
 var work = {
 	"jobs": [{
 		"employer": "INGSW",
@@ -38,6 +18,13 @@ var work = {
 		"dates": 2013,
 		"description": "3D Designer and Animator"
   }]
+}
+
+var displayWork = function() {
+	for (job in work.jobs){
+		var jobDataTemplate = `<h2>${work.jobs[job].title} at ${work.jobs[job].employer} in ${work.jobs[job].location} (${work.jobs[job].dates})</h2>`
+		$("#work").append(jobDataTemplate)
+	}
 }
 
 var projects = {
@@ -61,21 +48,20 @@ var projects = {
 
 var bio = {
   "name": "Fran",
-  "age": 32,
   "role": "Web Dev",
   "contacts": {
     "mobile": "(598)98866416",
     "email": "fran.mazzoni@gmail.com",
-    "github": "pucho"
+    "github": "pucho",
+		"location": "Montevideo"
   },
-  "pictureURL": "https://avatars.githubusercontent.com/pucho",
-  "welcome-message": "Hi, welcome to my resume",
-  "location": "Montevideo",
+	"welcomeMessage": "Hi, welcome to my resume",
+	"biopic": "https://avatars.githubusercontent.com/pucho",
   "skills" : [
     "Web Dev",
     "3D Design",
     "3D Printing"
-  ]
+  ],
 }
 
 var education = {
