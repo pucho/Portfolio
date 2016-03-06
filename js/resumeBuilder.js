@@ -3,21 +3,27 @@ var work = {
 		"employer": "INGSW",
 		"title": "Web Dev",
 		"location": "Montevideo",
+		"lat": -34.909000,
+		"long": -56.1690221,
 		"dates": 2015,
 		"description": "Front End Developer"
 	}, {
 		"employer": "Sonda",
 		"title": "SysAdmin",
 		"location": "Montevideo",
+		"lat": -34.9099233,
+		"long": -56.1690221,
 		"dates": 2014,
 		"description": "Linux SysAdmin"
 	}, {
     "employer": "UCS Studio",
 		"title": "3D Designer",
 		"location": "Buenos Aires",
+		"lat": -34.5977572,
+		"long": -58.372322,
 		"dates": 2013,
 		"description": "3D Designer and Animator"
-  }],
+  }]
 }
 
 var projects = {
@@ -145,3 +151,23 @@ education.display = function () {
 		 $("#education").append(educationTemplate)
 		}
 	}
+
+var map = {}
+map.display = function init_map() {
+	var map_center = new google.maps.LatLng(-34.6965124,-57.3428185,11)
+	var var_mapoptions = {
+		center: map_center,
+		zoom: 7
+	}
+	var var_map = new google.maps.Map($("#map-container")[0], var_mapoptions)
+
+
+	for(job in work.jobs){
+		var var_location = new google.maps.LatLng(work.jobs[job].lat,work.jobs[job].long)
+		var var_marker = new google.maps.Marker({
+			position: var_location,
+			map: var_map,
+			title:`${work.jobs[job].employer}`
+		})
+	}
+}
