@@ -23,6 +23,11 @@ h2 {
   margin-top: 0px;
 }
 
+#map-container {
+   height: 300px;
+}
+
+
 .main-project-img {
   font-size: 20px;
   text-align: center;

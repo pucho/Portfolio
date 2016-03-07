@@ -92,6 +92,8 @@ var education = {
   }]
 }
 
+//Functions for json data display
+
 bio.display = function() {
 		$("#bio").append("<h2>Contact</h2>")
 		for (index in bio.contacts){
@@ -102,7 +104,7 @@ bio.display = function() {
 		$("#bio").append("<h2>Skills</h2>")
 		for(index in bio.skills){
 			var skillsTemplate = `<div class="col-md-${12 / Object.keys(bio.skills).length}">
-				<h5>${bio.skills[index]}</h5>`
+				<h4>${bio.skills[index]}</h4>`
 			$("#bio").append(skillsTemplate)
 		}
 		$("#bio").append("</div")
@@ -152,6 +154,7 @@ education.display = function () {
 		}
 	}
 
+//Functions for map display
 var map = {}
 map.display = function init_map() {
 	var map_center = new google.maps.LatLng(-34.6965124,-57.3428185,11)
